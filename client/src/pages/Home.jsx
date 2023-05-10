@@ -1,5 +1,6 @@
 import React from 'react'
-import {Loader,Card,FormField} from'./components';
+import {useState} from 'react'
+import {Loader,Card,FormField} from'../components';
 
 const RenderCard =({data,title})=>{
     if(data?.length>0) {
@@ -10,8 +11,8 @@ const RenderCard =({data,title})=>{
     )
 }
 
-Home=()=> {
-    const [loading,setLoading] = useState(true);
+const Home=()=> {
+    const [loading,setLoading] = useState(false);
     const [allPosts,setAllPosts] = useState(null);
     const [searchText, setSearchText] = useState("")
   return (
@@ -28,6 +29,7 @@ Home=()=> {
         <FormField />
     </div>
     <div className="mt-10">
+        {/* Use of ternary operator */}
         {loading ?(
            <div className="flex justify-center items-center">
             <Loader />
@@ -58,3 +60,5 @@ Home=()=> {
    </section>
   )
 }
+
+export default Home
