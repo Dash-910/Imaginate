@@ -40,7 +40,7 @@ const CreatePost= ()=>{
                     headers:{
                         'content-Type':'application/json',
                     },
-                    body:JSON.strinigfy({
+                    body:JSON.stringify({
                         prompt:form.prompt,
                     }),
                 });
@@ -50,7 +50,7 @@ const CreatePost= ()=>{
                 setForm({...form,photo:'data:image/jpeg;base64,${data.photo}'});
             }catch(error)
             {
-                alert(err);
+                alert(error);
             }finally{
                 setGeneratingImg(false);
             }
